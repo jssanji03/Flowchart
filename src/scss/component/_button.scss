@@ -1,0 +1,17 @@
+//子
+@each $name, $colors in $types {
+  .cusBtn-#{$name} {
+    background:$colors;
+    color:#fff;
+    border: 1px solid darken($colors,5%);
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px 10px;
+    &:hover{
+        background-color: darken($colors,5%);
+        color: #fff;
+    }
+  }
+}
+
