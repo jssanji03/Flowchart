@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FlowChart</title>
 <script defer src="./index.bundle.js"></script><link href="./css/app.css" rel="stylesheet"></head>
 <body>
+    <section>
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center">
+                <!-- progressbar -->
+                <div id="diagramContainer">
+                </div>
+                <div class="item-header card">
+                    <div class="card-header header">
+                        <h6 class="col-7 text-start js-title">Title</h6>
+                        <div class="col-5 text-end">
+                            <i class="fas fa-trash-alt kill"></i>
+                            <i class="fas fa-pen edit" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                            <i class="fas fa-plus add"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="description"></div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="headerTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title js-headerTitle">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">標題：</label>
+                                    <input type="email" class="form-control js-titleText" id="exampleFormControlInput1">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">內容：</label>
+                                    <textarea class="form-control js-bodyText" type="text" rows="5"></textarea><br>
+                                </div>
     
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button class="btn cusBtn-submit" id="submitContent" type="submit" value="Submit">儲存</button>
+                                <button type="button" class="btn cusBtn-cancel" data-bs-dismiss="modal">關閉</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <script src="./plugin/jsplumb.js"></script> -->
 </body>
 </html>

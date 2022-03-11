@@ -28,21 +28,6 @@
     }
 }
 
-// .item {
-//   position: absolute;
-//   padding: 0px;
-//   top: 30px;
-//   height: 120px;
-//   width: 250px;
-//   border: 1px solid rgb(183, 204, 218);
-//   background-color: rgb(245, 245, 245);
-//   .header{
-//     @include itemColor;
-//   }
-//   .childHeader{
-//     @include itemColor($background-color:rgb(203, 238, 230),$color:rgb(76, 170, 182));
-//   }
-// }
 
 @each $name, $colors in $itemTypes {
   .item-#{$name} {
