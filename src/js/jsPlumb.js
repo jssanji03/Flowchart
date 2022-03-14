@@ -2,7 +2,7 @@ jsPlumb.ready(function () {
   const container = document.querySelector("#diagramContainer")
   const bodyText = document.querySelector(".js-bodyText")
   // jsPlumb.setContainer(container);
- 
+    let data = []
     let common = {
     isSource: true,
     isTarget: true,
@@ -40,7 +40,7 @@ jsPlumb.ready(function () {
     }]
   ]
     }; 
-    let data = []
+   
     
 //MAKE ITEM
   jsPlumb.addEndpoint(
@@ -52,13 +52,19 @@ jsPlumb.ready(function () {
     
   //DELETE CONNECTION
   jsPlumb.bind("click", function (conn, originalEvent) {
-           if (confirm("Delete connection from " + conn.sourceId + " to " + conn.targetId + "?"))
-             jsPlumb.deleteConnection(conn);
+        if (confirm("Delete connection from " + conn.sourceId + " to " + conn.targetId + "?"))
+          jsPlumb.deleteConnection(conn);
         });
   //DELETE ITEM
-  jsPlumb.on(document,"click", ".kill", function(){
-    if (confirm("Delete item?"))
-             jsPlumb.remove($(this).parents(".item"));
+  jsPlumb.on(document, "click", ".kill", function () {
+    const selected = $(this).parents(".item").attr("id")
+    if (confirm("Delete item?")) {
+      jsPlumb.remove($(this).parents(".item"));
+      data = data.filter(function (item) {
+        return item.nodeId !== selected
+      })
+    }
+    console.log("data",data);
   });
    //EDIT ITEM
   jsPlumb.on(document,"click", ".edit", function(){
@@ -70,9 +76,10 @@ jsPlumb.ready(function () {
     $('.js-bodyText').val(exist)
     $('.js-titleText').val(existTitle)
     bodyText.dataset.node = $(this).parents(".item")[0].id
+
   });
   
-  jsPlumb.on(document, "click", ".add", function() {
+  jsPlumb.on(document, "click", ".add", function () {
     const item = `<div class="item-child item card">
                     <div class="card-header childHeader">
                         <h6 class="col-7 text-start js-title">Featured</h6>
@@ -108,17 +115,18 @@ jsPlumb.ready(function () {
   const submit = document.querySelector("#submitContent")
   function submitContent() {
       submit.addEventListener("click", () => {
-          let obj = {} 
-          let titleWords = document.querySelector('.js-titleText').value
-          let words = document.querySelector('.js-bodyText').value;
-          let node = document.querySelector(".js-bodyText").getAttribute('data-node')
-          document.getElementById(node).getElementsByClassName('description')[0].innerHTML = words
-          document.getElementById(node).getElementsByClassName('js-title')[0].innerHTML = titleWords;
+        let obj = {} 
+        let titleWords = document.querySelector('.js-titleText').value
+        let words = document.querySelector('.js-bodyText').value;
+        let node = document.querySelector(".js-bodyText").getAttribute('data-node')
+        document.getElementById(node).getElementsByClassName('description')[0].innerHTML = words
+        document.getElementById(node).getElementsByClassName('js-title')[0].innerHTML = titleWords;
         //   $('#exampleModal').hide();
+          obj.id = data.length+1
+          obj.nodeId = node
           obj.title = titleWords
           obj.contents = words
-          data.push(obj)
-          console.log(data);
+        data.push(obj)
       });
   }
   submitContent()

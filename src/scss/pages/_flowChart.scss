@@ -3,6 +3,7 @@
   width: 100%;
   height: 100vh;
   border: 1px solid gray;
+  // display: flex;
   position: relative;
 }
 @mixin itemColor($background-color:rgb(216, 234, 245),$color:rgb(76, 118, 182)){
@@ -28,12 +29,12 @@
     }
 }
 
-
-@each $name, $colors in $itemTypes {
-  .item-#{$name} {
+.item-header {
+    // margin: 0 auto;
     position: absolute;
-    padding: 0px;
     top: 30px;
+    left: 40%;
+    padding: 0px;
     height: 120px;
     width: 200px;
     border: 1px solid rgb(183, 204, 218);
@@ -41,9 +42,44 @@
     .header{
       @include itemColor;
     }
+    // .childHeader{
+    //   @include itemColor($background-color:$colors,$color:rgb(76, 170, 182));
+    // }
+  }
+.item-child {
+    // margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    // left: 40%;s
+    padding: 0px;
+    height: 120px;
+    width: 200px;
+    border: 1px solid rgb(183, 204, 218);
+    background-color: rgb(245, 245, 245);
+    // .header{
+    //   @include itemColor;
+    // }
     .childHeader{
-      @include itemColor($background-color:$colors,$color:rgb(76, 170, 182));
+      @include itemColor($background-color:rgb(203, 238, 230),$color:rgb(76, 170, 182));
     }
   }
-}
+// @each $name, $colors in $itemTypes {
+//   .item-#{$name} {
+//     // margin: 0 auto;
+//     position: absolute;
+//     top: 30px;
+//     left: 40%;
+//     padding: 0px;
+//     height: 120px;
+//     width: 200px;
+//     border: 1px solid rgb(183, 204, 218);
+//     background-color: rgb(245, 245, 245);
+//     .header{
+//       @include itemColor;
+//     }
+//     .childHeader{
+//       @include itemColor($background-color:$colors,$color:rgb(76, 170, 182));
+//     }
+//   }
+// }
 
