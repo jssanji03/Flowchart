@@ -3209,6 +3209,7 @@ jsPlumb.ready(function () {
   var container = document.querySelector("#diagramContainer");
   var bodyText = document.querySelector(".js-bodyText"); // jsPlumb.setContainer(container);
 
+  var data = [];
   var common = {
     isSource: true,
     isTarget: true,
@@ -3251,8 +3252,7 @@ jsPlumb.ready(function () {
       length: 8,
       location: 1
     }]]
-  };
-  var data = []; //MAKE ITEM
+  }; //MAKE ITEM
 
   jsPlumb.addEndpoint($(".item-header"), {
     anchor: ["Bottom"]
@@ -3263,7 +3263,16 @@ jsPlumb.ready(function () {
   }); //DELETE ITEM
 
   jsPlumb.on(document, "click", ".kill", function () {
-    if (confirm("Delete item?")) jsPlumb.remove($(this).parents(".item"));
+    var selected = $(this).parents(".item").attr("id");
+
+    if (confirm("Delete item?")) {
+      jsPlumb.remove($(this).parents(".item"));
+      data = data.filter(function (item) {
+        return item.nodeId !== selected;
+      });
+    }
+
+    console.log("data", data);
   }); //EDIT ITEM
 
   jsPlumb.on(document, "click", ".edit", function () {
@@ -3304,10 +3313,11 @@ jsPlumb.ready(function () {
       document.getElementById(node).getElementsByClassName('description')[0].innerHTML = words;
       document.getElementById(node).getElementsByClassName('js-title')[0].innerHTML = titleWords; //   $('#exampleModal').hide();
 
+      obj.id = data.length + 1;
+      obj.nodeId = node;
       obj.title = titleWords;
       obj.contents = words;
       data.push(obj);
-      console.log(data);
     });
   }
 
