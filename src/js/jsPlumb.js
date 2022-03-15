@@ -52,13 +52,16 @@ jsPlumb.ready(function () {
     
   //DELETE CONNECTION
   jsPlumb.bind("click", function (conn, originalEvent) {
-        if (confirm("Delete connection from " + conn.sourceId + " to " + conn.targetId + "?"))
+    const sourceChild = conn.source.children[0].children[0].textContent
+    const targetChild = conn.target.children[0].children[0].textContent
+    
+        if (confirm(`確定刪除從 ${sourceChild} 連接到 ${targetChild} 嗎？`))
           jsPlumb.deleteConnection(conn);
         });
   //DELETE ITEM
   jsPlumb.on(document, "click", ".kill", function () {
     const selected = $(this).parents(".item").attr("id")
-    if (confirm("Delete item?")) {
+    if (confirm("確定刪除嗎?")) {
       jsPlumb.remove($(this).parents(".item"));
       data = data.filter(function (item) {
         return item.nodeId !== selected
