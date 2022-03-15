@@ -37,4 +37,5 @@
 "jquery": "^3.6.0"
 "jsplumb": "^2.15.6"
 ```
-
+## 原始文章
+https://wdd.js.org/jsplumb-chinese-tutorial/#/?id=_26-%e7%bb%99%e8%bf%9e%e6%8e%a5%e5%8a%a0%e4%b8%8a%e7%ae%ad%e5%a4%b4
