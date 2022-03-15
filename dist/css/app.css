@@ -8524,8 +8524,9 @@ table {
 
 .item-header {
   position: absolute;
-  padding: 0px;
   top: 30px;
+  left: 40%;
+  padding: 0px;
   height: 120px;
   width: 200px;
   border: 1px solid #b7ccda;
@@ -8547,49 +8548,15 @@ table {
     .item-header .header .add {
       font-size: 16px;
       margin-right: 5px; }
-  .item-header .childHeader {
-    background-color: #b1c7d6;
-    display: flex;
-    font-size: 14px;
-    color: #4caab6;
-    padding: 5px 8px; }
-    .item-header .childHeader .accordion-button {
-      background-color: #e5eff5; }
-    .item-header .childHeader .kill {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-header .childHeader .edit {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-header .childHeader .add {
-      font-size: 16px;
-      margin-right: 5px; }
 
 .item-child {
   position: absolute;
-  padding: 0px;
   top: 30px;
+  padding: 0px;
   height: 120px;
   width: 200px;
   border: 1px solid #b7ccda;
   background-color: whitesmoke; }
-  .item-child .header {
-    background-color: #d8eaf5;
-    display: flex;
-    font-size: 14px;
-    color: #4c76b6;
-    padding: 5px 8px; }
-    .item-child .header .accordion-button {
-      background-color: #e5eff5; }
-    .item-child .header .kill {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-child .header .edit {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-child .header .add {
-      font-size: 16px;
-      margin-right: 5px; }
   .item-child .childHeader {
     background-color: #cbeee6;
     display: flex;
@@ -8605,49 +8572,6 @@ table {
       font-size: 16px;
       margin-right: 5px; }
     .item-child .childHeader .add {
-      font-size: 16px;
-      margin-right: 5px; }
-
-.item-yellow {
-  position: absolute;
-  padding: 0px;
-  top: 30px;
-  height: 120px;
-  width: 200px;
-  border: 1px solid #b7ccda;
-  background-color: whitesmoke; }
-  .item-yellow .header {
-    background-color: #d8eaf5;
-    display: flex;
-    font-size: 14px;
-    color: #4c76b6;
-    padding: 5px 8px; }
-    .item-yellow .header .accordion-button {
-      background-color: #e5eff5; }
-    .item-yellow .header .kill {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-yellow .header .edit {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-yellow .header .add {
-      font-size: 16px;
-      margin-right: 5px; }
-  .item-yellow .childHeader {
-    background-color: #f0ce38;
-    display: flex;
-    font-size: 14px;
-    color: #4caab6;
-    padding: 5px 8px; }
-    .item-yellow .childHeader .accordion-button {
-      background-color: #e5eff5; }
-    .item-yellow .childHeader .kill {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-yellow .childHeader .edit {
-      font-size: 16px;
-      margin-right: 5px; }
-    .item-yellow .childHeader .add {
       font-size: 16px;
       margin-right: 5px; }
 

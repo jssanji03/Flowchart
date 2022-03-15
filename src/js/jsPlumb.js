@@ -64,7 +64,7 @@ jsPlumb.ready(function () {
         return item.nodeId !== selected
       })
     }
-    console.log("data",data);
+    console.log("Delete data",data);
   });
    //EDIT ITEM
   jsPlumb.on(document,"click", ".edit", function(){
@@ -127,6 +127,7 @@ jsPlumb.ready(function () {
           obj.title = titleWords
           obj.contents = words
         data.push(obj)
+        console.log("data",data);
       });
   }
   submitContent()
